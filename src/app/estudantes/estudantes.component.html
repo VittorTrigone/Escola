@@ -45,11 +45,19 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome:</label>
                         <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nome">
+
+                        <div *ngIf="submitted && name.invalid">
+                            <small class="text-danger">Nome Invalido!</small>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Email:</label>
                         <input type="text" formControlName="email" class="form-control" id="description"
                             placeholder="Descrição">
+
+                            <div *ngIf="submitted && email.invalid">
+                                <small class="text-danger">Email Invalido!</small>
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="supplier" class="form-label">RG:</label>
@@ -70,9 +78,9 @@
         </div>
     </div>
     <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-secondary" (click)="modal.close()">Fechar</button>
-        <button type="button" class="btn btn-primary" (click)="save()" (click)="modal.close()">Salvar</button>
-    </div>
+        <button type="button" class="btn btn-secondary" (click)="modal.close()" (click)="limpar()">Fechar</button>
+        <button type="button" class="btn btn-primary" (click)="save()" (click)="fecharModal()">Salvar</button>
+      </div>
 </ng-template>
 
 <ng-template #EditarEstudante let-modal>
@@ -112,6 +120,6 @@
     </div>
     <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-secondary" (click)="modal.close()">Fechar</button>
-        <button type="button" class="btn btn-primary" (click)="save()" (click)="modal.close()">Salvar</button>
+        <button type="button" class="btn btn-primary" (click)="save()" (click)="fecharModal()">Salvar</button>
     </div>
 </ng-template>
