@@ -1,6 +1,6 @@
 <div class="text-center mb-5 mt-5">
     <div class="display-6">Clientes</div>
-    <div class="mb-5 mt-5"><button (click)="open(CadastrarEstudante)" type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cadastrar</button></div>
+    <div class="mb-5 mt-5"><button (click)="open(CadastrarEstudante)" (click)="limpar()" type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cadastrar</button></div>
 </div>
 
 <div class="d-flex justify-content-center align-items-center border-top">
@@ -10,9 +10,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
-                <th scope="col">RG</th>
-                <th scope="col">Data de Nascimento</th>
-                <th scope="col">Telefone</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Location</th>
                 <th scope="col" class="teste">Opções</th>
             </tr>
         </thead>
@@ -21,9 +20,8 @@
                 <td scope="row">{{estudante.id}}</td>
                 <td>{{estudante.name}}</td>
                 <td>{{estudante.email}}</td>
-                <td>{{estudante.RG}}</td>
-                <td>{{estudante.data_nasc}}</td>
-                <td>{{estudante.tel}}</td>
+                <td>{{estudante.cpf}}</td>
+                <td>{{estudante.location}}</td>
                 <td>
                     <button (click)="open(EditarEstudante)" class="btn btn-outline-primary me-1"
                         (click)="edit(estudante)">Editar</button>
@@ -60,17 +58,13 @@
                             </div>
                     </div>
                     <div class="mb-3">
-                        <label for="supplier" class="form-label">RG:</label>
-                        <input type="number" formControlName="RG" class="form-control" id="supplier"
+                        <label for="supplier" class="form-label">CPF:</label>
+                        <input type="text" formControlName="cpf" class="form-control" id="supplier"
                             placeholder="Fornecedor">
                     </div>
                     <div class="mb-3">
-                        <label for="price" class="form-label">Data de Nascimento:</label>
-                        <input type="date" formControlName="data_nasc" class="form-control" id="price" placeholder="Preço">
-                    </div>
-                    <div class="mb-3">
-                        <label for="amont" class="form-label">Telefone:</label>
-                        <input type="number" formControlName="tel" class="form-control" id="amont"
+                        <label for="amont" class="form-label">Endereço:</label>
+                        <input type="text" formControlName="location" class="form-control" id="amont"
                             placeholder="Quantidade">
                     </div>
                 </form>
@@ -101,17 +95,13 @@
                             placeholder="Descrição">
                     </div>
                     <div class="mb-3">
-                        <label for="supplier" class="form-label">RG:</label>
-                        <input type="number" formControlName="RG" class="form-control" id="supplier"
+                        <label for="supplier" class="form-label">CPF:</label>
+                        <input type="text" formControlName="cpf" class="form-control" id="supplier"
                             placeholder="Fornecedor">
                     </div>
                     <div class="mb-3">
-                        <label for="price" class="form-label">Data de Nascimento:</label>
-                        <input type="date" formControlName="data_nasc" class="form-control" id="price" placeholder="Preço">
-                    </div>
-                    <div class="mb-3">
-                        <label for="amont" class="form-label">Telefone:</label>
-                        <input type="number" formControlName="tel" class="form-control" id="amont"
+                        <label for="amont" class="form-label">Endereço:</label>
+                        <input type="text" formControlName="location" class="form-control" id="amont"
                             placeholder="Quantidade">
                     </div>
                 </form>
@@ -119,7 +109,7 @@
         </div>
     </div>
     <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-secondary" (click)="modal.close()">Fechar</button>
+        <button type="button" class="btn btn-secondary" (click)="modal.close()" (click)="limpar()">Fechar</button>
         <button type="button" class="btn btn-primary" (click)="save()" (click)="fecharModal()">Salvar</button>
     </div>
 </ng-template>

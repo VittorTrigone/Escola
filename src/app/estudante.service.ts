@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EstudanteService {
 
-  url = "http://localhost:3000/estudantes";
+  url = "http://localhost:8080/students";
   constructor(private http: HttpClient) { }
 
   getEstudante(): Observable<Estudante[]> {

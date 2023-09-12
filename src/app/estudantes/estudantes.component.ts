@@ -21,9 +21,8 @@ export class EstudantesComponent {
       id: [''],
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      RG: ['', [Validators.required]],
-      data_nasc: ['', [Validators.required]],
-      tel: ['', Validators.required]
+      cpf: ['', [Validators.required]],
+      location: ['', [Validators.required]]
     })
   }
   ngOnInit(): void {
@@ -104,5 +103,5 @@ export class EstudantesComponent {
       this.submitted = false;
     }
   }
-  
+
 }
